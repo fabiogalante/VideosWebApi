@@ -1,0 +1,14 @@
+/Users/fabio/app/CursoWebApi/bin/Debug/netcoreapp2.1/CursoWebApi.deps.json
+/Users/fabio/app/CursoWebApi/bin/Debug/netcoreapp2.1/CursoWebApi.runtimeconfig.json
+/Users/fabio/app/CursoWebApi/bin/Debug/netcoreapp2.1/CursoWebApi.runtimeconfig.dev.json
+/Users/fabio/app/CursoWebApi/bin/Debug/netcoreapp2.1/CursoWebApi.dll
+/Users/fabio/app/CursoWebApi/bin/Debug/netcoreapp2.1/CursoWebApi.pdb
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.csprojAssemblyReference.cache
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.csproj.CoreCompileInputs.cache
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.RazorAssemblyInfo.cache
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.RazorAssemblyInfo.cs
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.AssemblyInfoInputs.cache
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.AssemblyInfo.cs
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.RazorTargetAssemblyInfo.cache
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.dll
+/Users/fabio/app/CursoWebApi/obj/Debug/netcoreapp2.1/CursoWebApi.pdb
