@@ -8,9 +8,9 @@ namespace CursoWebApi.Models
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public int? CategoriaId { get; set; }
-        public DateTime? DataCriacao { get; set; }
+        public DateTime? DataCriacao { get; set; } = DateTime.Now;
 
-        
+
         public Categoria Categoria { get; set; }
 
     }
