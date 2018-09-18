@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "4ca061ef-a798-43c6-9c2c-e7a96ff97106",
+		"name": "Curso WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obter Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/post/ObterCategorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"post",
+						"ObterCategorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Titulo\": \"Post 8\",\n\t\"Descricao\": \"Descricao do Post 8\",\n\t\"CategoriaId\": 4\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/post/AdicionarPost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"post",
+						"AdicionarPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"PostId\": 8,\n\t\"Titulo\": \"Post id 4 alterado\",\n\t\"Descricao\": \"Novo descricao alterada do post 8\",\n\t\"CategoriaId\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/post/AtualizarPost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"post",
+						"AtualizarPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"PostId\": 8,\n\t\"Titulo\": \"Post id 4 alterado\",\n\t\"Descricao\": \"Novo descricao alterada do post 8\",\n\t\"CategoriaId\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/post/AtualizarPost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"post",
+						"AtualizarPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/post/ObterPosts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"post",
+						"ObterPosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Post por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/post/ObterPost/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"post",
+						"ObterPost",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
