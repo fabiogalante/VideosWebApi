@@ -16,5 +16,7 @@ namespace CursoWebApi.Repositorio {
         Task ExcluirPost (int? postId);
 
         Task AtualizarPost (Post post);
+
+        Task Salvar();
     }
 }

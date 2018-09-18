@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{C735143C-9EBB-4F3C-857B-44DED82F989D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Repositorio/PostRepositorio.cs">
+    <Files>
+      <File FileName="Repositorio/IPostRepositorio.cs" Line="1" Column="1" />
+      <File FileName="Repositorio/PostRepositorio.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CursoWebApi PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

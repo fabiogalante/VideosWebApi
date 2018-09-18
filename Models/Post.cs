@@ -9,6 +9,8 @@ namespace CursoWebApi.Models
         public string Descricao { get; set; }
         public int? CategoriaId { get; set; }
         public DateTime? DataCriacao { get; set; }
+
+        
         public Categoria Categoria { get; set; }
 
     }
