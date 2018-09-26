@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using CursoWebApi.Models;
-using CursoWebApi.Repositorio;
+using CursoWebApi.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CursoWebApi.Controllers
@@ -9,69 +9,47 @@ namespace CursoWebApi.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IPostRepositorio _repositorio;
+        private readonly IPostServico _postServico;
 
-        public PostController(IPostRepositorio repositorio)
+        public PostController(IPostServico postServico)
         {
-            _repositorio = repositorio;
+            _postServico = postServico;
         }
 
-        [HttpGet]
-        [Route("ObterCategorias")]
-        public async Task<IActionResult> ObterCategorias()
-        {
-            var categorias = await _repositorio.ObterCategorias();
-            if (categorias == null) return BadRequest();
-
-            return Ok(categorias);
-        }
+       
 
         [HttpGet]
         [Route("ObterPosts")]
         public async Task<IActionResult> ObterPosts()
         {
-            var posts = await _repositorio.ObterPosts();
-            if (posts == null) return BadRequest();
+            return await _postServico.ObterPosts();
+        }
 
-            return Ok(posts);
+        [HttpGet]
+        [Route("{categoriaId}/ObterPostsPorCategoria")]
+        public async Task<IActionResult> ObterPostsPorCategoria(int? categoriaId)
+        {
+            return await _postServico.ObterPostsPorCategoria(categoriaId);
         }
 
         [HttpGet]
         [Route("ObterPost/{postId}")]
-        public async Task<IActionResult> ObterPost(int? postId)
+        public async Task<IActionResult> ObterPost(int postId)
         {
-            if (postId == null) return NotFound();
-
-            var post = await _repositorio.ObterPost(postId);
-            if (post == null) return BadRequest();
-
-            return Ok(post);
+            return await _postServico.ObterPost(postId);
         }
 
         [HttpPost]
         [Route("AdicionarPost")]
-        public async Task<IActionResult> AdicionarPost([FromBody] Post model)
+        public async Task<IActionResult> AdicionarPost([FromBody] Post post)
         {
-            if (model == null)
-                return BadRequest();
-
-            var postId = await _repositorio.AdicinarPost(model);
-
-            if (postId > 0)
-                return Ok(postId);
-
-            return StatusCode(500, "Erro ao incluir o post");
+            return await _postServico.AdicinarPost(post);
         }
 
         [HttpDelete("{postId}/ExcluirPost")]
-        public async Task<IActionResult> Excluir(int? postId)
+        public async Task<IActionResult> Excluir(int postId)
         {
-            if (postId == null)
-                return NotFound();
-
-            await _repositorio.ExcluirPost(postId);
-
-            return NoContent();
+            return await _postServico.ExcluirPost(postId);
         }
 
         [HttpPut]
@@ -83,9 +61,7 @@ namespace CursoWebApi.Controllers
 
             //Api Controller valida
 
-            await _repositorio.AtualizarPost(model);
-            return Ok();
-
+            return await _postServico.AtualizarPost(model);
             
         }
     }
