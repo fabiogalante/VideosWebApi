@@ -21,28 +21,21 @@ namespace CursoWebApi.Servicos
 
         public async Task<IActionResult> ObterPosts()
         {
-            try
-            {
-                IEnumerable<Post> posts = await _postRepositorio.ObterPosts();
 
-                if (posts != null)
+            var posts = await _postRepositorio.ObterPosts();
+
+            if (posts != null)
+            {
+                return new OkObjectResult(posts.Select(p => new PostViewModel
                 {
-                    return new OkObjectResult(posts.Select(p => new PostViewModel
-                    {
-                        Id = p.PostId,
-                        Titulo = p.Titulo,
-                        Descricao = p.Descricao,
-                        DataCriacao = p.DataCriacao,
-                    }));
-                }
-
-                return new NotFoundResult();
-
+                    Id = p.PostId,
+                    Titulo = p.Titulo,
+                    Descricao = p.Descricao,
+                    DataCriacao = p.DataCriacao,
+                }));
             }
-            catch
-            {
-                return new ConflictResult();
-            }
+
+            return new BadRequestResult();
 
         }
 
@@ -51,52 +44,38 @@ namespace CursoWebApi.Servicos
             if (categoriaId == null)
                 return new BadRequestResult();
 
-            try
-            {
-                IEnumerable<Post> posts = await _postRepositorio.ObterPostsPorCategoria(categoriaId);
+            var posts = await _postRepositorio.ObterPostsPorCategoria(categoriaId);
 
-                if (posts != null)
+            if (posts != null)
+            {
+                return new OkObjectResult(posts.Select(p => new PostViewModel
                 {
-                    return new OkObjectResult(posts.Select(p => new PostViewModel
-                    {
-                        Titulo = p.Titulo,
-                        Descricao = p.Descricao,
-                        DataCriacao = p.DataCriacao,
-                    }));
-                }
-
-                return new NotFoundResult();
-
+                    Titulo = p.Titulo,
+                    Descricao = p.Descricao,
+                    DataCriacao = p.DataCriacao,
+                }));
             }
-            catch
-            {
-                return new ConflictResult();
-            }
+
+            return new BadRequestResult();
+           
         }
 
         public async Task<IActionResult> ObterPost(int? postId)
         {
-            try
-            {
-                Post post = await _postRepositorio.ObterPost(postId);
+            Post post = await _postRepositorio.ObterPost(postId);
 
-                if (post != null)
+            if (post != null)
+            {
+                return new OkObjectResult(new PostViewModel
                 {
-                    return new OkObjectResult(new PostViewModel
-                    {
-                        Id = post.PostId,
-                        Titulo = post.Titulo,
-                        Descricao = post.Descricao,
-                        DataCriacao = post.DataCriacao
-                    });
-                }
+                    Id = post.PostId,
+                    Titulo = post.Titulo,
+                    Descricao = post.Descricao,
+                    DataCriacao = post.DataCriacao
+                });
+            }
 
-                return new NotFoundResult();
-            }
-            catch
-            {
-                return new ConflictResult();
-            }
+            return new NoContentResult();
         }
 
        
@@ -119,28 +98,20 @@ namespace CursoWebApi.Servicos
         {
 
             if (postId == null)
-                return new BadRequestResult();
+                return new NoContentResult();
 
-            try
+            var post = await _postRepositorio.ExcluirPost(postId);
+
+            return new OkObjectResult(new PostViewModel
             {
-                Post post = await _postRepositorio.ExcluirPost(postId);
+                Id = post.PostId,
+                Titulo = post.Titulo,
+                Descricao = post.Descricao
+            });
 
-                if (post != null)
-                {
-                    return new OkObjectResult(new PostViewModel
-                    {
-                        Id = post.PostId,
-                        Titulo = post.Titulo,
-                        Descricao = post.Descricao
-                    });
-                }
+           
 
-                return new NotFoundResult();
-            }
-            catch
-            {
-                return new ConflictResult();
-            }
+           
          
         }
 
