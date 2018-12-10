@@ -107,11 +107,7 @@ namespace CursoWebApi.Servicos
                 Id = post.PostId,
                 Titulo = post.Titulo,
                 Descricao = post.Descricao
-            });
-
-           
-
-           
+            });                          
          
         }
 
